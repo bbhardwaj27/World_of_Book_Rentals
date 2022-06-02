@@ -2,22 +2,22 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @list = List.find(params[:list_id])
-    @review.list = @list
+    @book = Book.find(params[:book_id])
+    @review.book = @book
     if @review.save
-      redirect_to list_path(@list)
+      redirect_to book_path(@book)
     else
-      render 'lists/show'
+      render 'books/show'
     end
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to list_path(@review.list)
+    redirect_to book_path(@review.book)
   end
 
-    private
+  private
 
   def review_params
     params.require(:review).permit(:comment, :rating)

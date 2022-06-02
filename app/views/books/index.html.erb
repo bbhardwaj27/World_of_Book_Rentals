@@ -7,11 +7,13 @@
       <div class="card-product-infos">
         <h2><%= book.title %></h2> by <%= book.author %>
         <p>
-        <%= book.summary%>
+          <%= book.summary%>
         </p>
+        <%= link_to "Detailed info", book, class:"btn btn-sm btn-primary" %>
+
       </div>
     </div>
   <% end %>
 </div>
 
-<%= link_to "New book", new_book_path %>
+<%= link_to "Browse", "Detailed info" %>

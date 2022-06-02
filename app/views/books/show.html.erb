@@ -1,23 +1,15 @@
-
-
 <div>
-  <%= link_to "New book", edit_book_path(@book), class: 'btn btn-primary' %> |
-  <%= link_to "Back to books", books_path, class: 'btn btn-link' %> |
-  <%= link_to "Create a review", new_book_review_path(@book), class: 'btn btn-link' %> |
-  <%= button_to "Destroy this book", @book, method: :delete, class: 'btn btn-danger btn-sm mt-3', form: { data: { turbo_confirm: 'Are you sure?' } } %>
+  <%= link_to title "Detailed info", @book, class:"btn btn-sm btn-primary" %>
+  <%= link_to "Publishing_year", book_path(@book), class: 'btn btn-primary' %>
+  <%= link_to "Submit", books_path, class: 'btn btn-link' %>
+  <%= link_to "Back to books", books_path, class: 'btn btn-link' %>
 </div>
 
-  <div class="card-product-infos">
-   <% @book.reviews.each do |review| %>
-  <h2><%= book.reviews %></h2>
-    <div class="row">
-      <div class="col">
-        <%= review.content %>
-      </div>
-      <div class="col">
-        <%= button_to "Delete this review", review, method: :delete, class: 'btn btn-danger btn-sm', form: { data: { turbo_confirm: 'Are you sure?' } } %>
-      </div>
-    </div>
-    <hr>
-  <% end %>
+<div class="card-product-infos">
+<% @book.reviews.each do |review| %>
+<h2><%= book.reviews %></h2>
 </div>
+<div class="col">
+<%= button_to "Add review", class: 'btn btn-review btn-md' %>
+</div>
+<% end %>

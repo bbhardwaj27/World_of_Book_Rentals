@@ -7,12 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Review.destroy_all
+Book.destroy_all
+User.destroy_all
+
 user = User.new(username: "Bhawana", email:"x@gmail", password: "123456")
 user.save!
 
 puts 'Creating 10 fake books...'
 10.times do
-  book = Book.new(
+  book = Book.create!(
     title: Faker::Book.title,
     author: Faker::Book.author,
     summary: Faker::Lorem.paragraph(sentence_count: 5),
@@ -20,6 +24,17 @@ puts 'Creating 10 fake books...'
     price: rand(10..30),
     user: user
   )
-  book.save!
 end
+
+Book.all.each do |book|
+  rand(4).times do
+    Review.create!(
+      comment: Faker::Lorem.paragraph(sentence_count: 2),
+      rating: rand(5),
+      book: book,
+      user: User.all.sample
+    )
+  end
+end
+
 puts 'Finished!'

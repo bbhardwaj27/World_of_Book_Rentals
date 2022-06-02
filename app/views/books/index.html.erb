@@ -1,0 +1,19 @@
+<p style="color: "><%= notice %></p>
+
+<h1>Book_Rentals</h1>
+
+
+<div id="books">
+  <% @books.each do |book| %>
+    <div class="card my-3">
+      <div class="card-body">
+
+        <p>
+          <%= link_to "Show this book", book %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New book", new_book_path %>

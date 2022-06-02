@@ -1,0 +1,9 @@
+<h1>Reviews#create</h1>
+<p>Find me in app/views/reviews/create.html.erb</p>
+<h1>Write a review!</h1>
+
+<%= simple_form_for [@book, @review] do |f| %>
+
+  <%=f.input :content %>
+  <%=f.submit class: 'btn btn-primary' %>
+<% end %>

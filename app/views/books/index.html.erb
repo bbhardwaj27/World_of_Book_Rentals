@@ -1,15 +1,13 @@
-<p style="color: "><%= notice %></p>
-
 <h1>Book_Rentals</h1>
-
 
 <div id="books">
   <% @books.each do |book| %>
-    <div class="card my-3">
-      <div class="card-body">
-
+    <div class="card-product book-card my-3">
+      <img src="https://picsum.photos/120/120/?blur" alt="">
+      <div class="card-product-infos">
+        <h2><%= book.title %></h2> by <%= book.author %>
         <p>
-          <%= link_to "Show this book", book %>
+        <%= book.summary%>
         </p>
       </div>
     </div>

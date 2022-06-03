@@ -39,7 +39,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to book_url, notice: "Book was successfully destroyed."
+    redirect_to books_path, notice: "Book was successfully destroyed."
   end
 
   private
@@ -49,6 +49,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :publishing_year, :booking, :rating)
+    params.require(:book).permit(:title, :author, :publishing_year, :price)
   end
 end

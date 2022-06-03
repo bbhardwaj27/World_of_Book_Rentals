@@ -1,9 +1,26 @@
-<div>
-<%= @book.title %>
+<div class="card" style="width: 18rem;">
+ <img src="https://picsum.photos/200" alt="">
+  <div class="card-body">
+    <h5 class="card-title"><%= @book.title %></h5>
+    <p class="card-text"><%= @book.summary %></p>
+    <p class="card-text"><%= @book.author %></p>
+    <p class="card-text"><%= @book.publishing_year %></p>
+    <p class="card-text"><%= @book.price %></p>
+    <%= link_to 'Edit', edit_book_path(@book) %>
+    <%= button_to 'Delete', book_path(@book), method: :delete %>
 
-</div>
+    </div>
+  </div>
 
-<div class="card-product-infos">
+
+
+
+
+
+
+
+<div class="card-product-infos my-5">
+<h2>Reviews</h2>
 <% @book.reviews.each do |review| %>
 <h2><%= review.comment %></h2>
 </div>

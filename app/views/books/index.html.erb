@@ -3,7 +3,7 @@
 
   <% @books.each do |book| %>
     <div class="card-product book-card my-3">
-      <img src="https://picsum.photos/120/120/?blur" alt="">
+      <img src="https://picsum.photos/200" alt="">
       <div class="card-product-infos">
         <h2><%= book.title %></h2> by <%= book.author %>
         <p>
@@ -11,11 +11,7 @@
         </p>
         <%= link_to "Detailed info", book, class:"btn btn-sm btn-primary" %>
 
-
-
-      </div>
+        </div>
     </div>
   <% end %>
 </div>
-
-<%= link_to "Browse", "Detailed info" %>

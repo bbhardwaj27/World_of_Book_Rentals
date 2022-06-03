@@ -1,13 +1,11 @@
 <div>
-  <%= link_to "Detailed info", @book, class:"btn btn-sm btn-primary" %>
-  <%= link_to "Publishing_year", book_path(@book), class: 'btn btn-primary' %>
-  <%= link_to "Submit", books_path, class: 'btn btn-link' %>
-  <%= link_to "Back to books", books_path, class: 'btn btn-link' %>
+<%= @book.title %>
+
 </div>
 
 <div class="card-product-infos">
 <% @book.reviews.each do |review| %>
-<h2><%= review_path %></h2>
+<h2><%= review.comment %></h2>
 </div>
 <div class="col">
 <%= button_to "Add review", class: 'btn btn-review btn-md' %>

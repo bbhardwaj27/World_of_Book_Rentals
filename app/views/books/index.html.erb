@@ -1,6 +1,6 @@
 <h1>Book_Rentals</h1>
+<%= link_to "Create a new Book", new_book_path, class:"btn btn-sm btn-primary" %>
 
-<div id="books">
   <% @books.each do |book| %>
     <div class="card-product book-card my-3">
       <img src="https://picsum.photos/120/120/?blur" alt="">
@@ -10,6 +10,8 @@
           <%= book.summary%>
         </p>
         <%= link_to "Detailed info", book, class:"btn btn-sm btn-primary" %>
+
+
 
       </div>
     </div>

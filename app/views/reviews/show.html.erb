@@ -4,14 +4,9 @@
 <img src="https://picsum.photos/200" alt="">
 </div>
 
-
 <div class="col">
-<% logger.info @book %>
 <p class="card-text"><%= @book.author %></p>
 <p class="card-text"><%= @book.title %></p>
-
-<%# <%= link_to 'Add review', create(@book)  %>
-
 </div>
 
 <h1>Reviews#create</h1>
@@ -22,6 +17,5 @@
 
   <%=f.input :comment %>
   <%=f.input :rating %>
-  <%= link_to 'Add_review',  book_reviews_path(@book, @review), method: :create %>
   <%=f.submit class: 'btn btn-primary' %>
 <% end %>

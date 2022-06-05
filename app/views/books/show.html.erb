@@ -19,8 +19,8 @@
 </div>
 <div class="col">
 <% logger.info " Book to review " + @book.title %>
-<%= link_to 'Add review', book_review_path(@book) %>
 <%# <%= button_to "Add review", reviews_show_path(@book), method: :create  %>
 <%# <%= link_to 'Add review', review_book_path(@book) %>
 </div>
 <% end %>
+<%= link_to 'Add review', book_review_path(@book) %>

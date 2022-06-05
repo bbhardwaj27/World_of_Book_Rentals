@@ -8,24 +8,19 @@
     <p class="card-text"><%= @book.price %></p>
     <%= link_to 'Edit', edit_book_path(@book) %>
     <%= button_to 'Delete', book_path(@book), method: :delete %>
-
     </div>
   </div>
-
-
-
-
-
-
 
 
 <div class="card-product-infos my-5">
 <h2>Reviews</h2>
 <% @book.reviews.each do |review| %>
-<h2><%= review.comment %></h2>
+<p><%= review.comment %></p>
 </div>
 <div class="col">
-<%= button_to "Add review", class: 'btn btn-review btn-md' %>
-
+<% logger.info " Book to review " + @book.title %>
+<%= link_to 'Add review', book_review_path(@book) %>
+<%# <%= button_to "Add review", reviews_show_path(@book), method: :create  %>
+<%# <%= link_to 'Add review', review_book_path(@book) %>
 </div>
 <% end %>

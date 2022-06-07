@@ -10,8 +10,8 @@
           <p class="card-text"><%= @book.author %></p>
           <p class="card-text"><%= @book.publishing_year %></p>
           <p class="card-text"><%= @book.price %></p>
-          <%= link_to 'Edit', edit_book_path(@book) %>
-          <%= link_to 'Delete', book_path(@book), method: :delete %>
+          <a href="#"><%= link_to 'Edit', edit_book_path(@book) %><i class="fas fa-pencil-alt"></i></a>
+          <a href="#"><%= link_to 'Delete', book_path(@book), method: :delete %><i class="far fa-trash-alt"></i></a>
         </div>
       </div>
     </div>
@@ -25,8 +25,6 @@
           <div class="notification-content">
             <p><small><%= review.updated_at.strftime('%m/%d/%y') %></small></p>
             <p><%= review.comment %></p>
-
-
           </div>
 
           <div class="notification-actions">
@@ -43,6 +41,4 @@
     </div>
   </div>
   <%= link_to 'Add review', book_review_path(@book) %>
-
-
 </div>

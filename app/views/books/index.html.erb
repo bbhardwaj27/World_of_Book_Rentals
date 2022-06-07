@@ -1,14 +1,12 @@
 <h1>Book_Rentals</h1>
-<%= link_to "Create a new Book", new_book_path, class:"btn btn-sm btn-primary" %>
+<%= link_to "Rent / Purchase a Book", new_book_path, class:"btn btn-sm btn-primary" %>
 
   <% @books.each do |book| %>
     <div class="card-product book-card my-3">
       <img src="https://picsum.photos/200" alt="">
       <div class="card-product-infos">
         <h2><%= book.title %></h2> by <%= book.author %>
-        <p>
-          <%= book.summary%>
-        </p>
+        <p><%= book.summary%></p>
         <%= link_to "Detailed info", book, class:"btn btn-sm btn-primary" %>
 
 

@@ -11,7 +11,7 @@ Review.destroy_all
 Book.destroy_all
 User.destroy_all
 
-user = User.new(username: "Bhawana", email:"x@gmail", password: "123456")
+user = User.new(username: "Bhawana", email: "x@gmail", password: "123456")
 user.save!
 
 puts 'Creating 10 fake books...'

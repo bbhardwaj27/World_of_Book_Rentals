@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     logger.info "We are in ReviewsController show"
     @book = Book.find(params[:book_id])
     @review = Review.new
+
     logger.info @book
     logger.info "We are in ReviewsController show"
   end

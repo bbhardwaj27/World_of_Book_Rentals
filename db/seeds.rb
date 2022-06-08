@@ -23,7 +23,14 @@ description = [
 ]
 
 images = [
-
+  "happy.jpg",
+  "book_full_of_hope.jpg",
+  "how_innovation_works.jpg",
+  "kinfolk.jpg",
+  "identity_theft.jpg",
+  "milk_honey.jpg",
+  "how_to_stop_worrying_start_living.jpg",
+  "thinking_fast_and_slow.jpg"
 ]
 
 puts 'Creating 10 fake books...'
@@ -32,6 +39,7 @@ puts 'Creating 10 fake books...'
     title: Faker::Book.title,
     author: Faker::Book.author,
     summary: description.sample,
+    image: images.sample,
     publishing_year: rand(1990..2022),
     price: rand(10..30),
     user: user

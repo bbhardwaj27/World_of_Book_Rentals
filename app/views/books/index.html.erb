@@ -3,7 +3,7 @@
 
   <% @books.each do |book| %>
     <div class="card-product book-card my-3">
-      <img src="https://picsum.photos/200" alt="">
+      <%= image_tag book.image, alt: "Le Wagon", width: 200 %>
       <div class="card-product-infos">
         <h2><%= book.title %></h2> by <%= book.author %>
         <p><%= book.summary%></p>

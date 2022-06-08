@@ -14,7 +14,8 @@ User.destroy_all
 user = User.new(username: "Bhawana", email: "x@gmail", password: "123456")
 user.save!
 
-description = ["Entails the facinating world of science fiction",
+description = [
+  "Entails the facinating world of science fiction",
   "Very emotional life journey which shows the struggle at different stages",
   "Latest trends how the market booming economies are impacted",
   "Managing the business along with the booming technology",

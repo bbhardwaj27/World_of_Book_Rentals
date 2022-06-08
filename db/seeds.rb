@@ -14,12 +14,23 @@ User.destroy_all
 user = User.new(username: "Bhawana", email: "x@gmail", password: "123456")
 user.save!
 
+description = ["Entails the facinating world of science fiction",
+  "Very emotional life journey which shows the struggle at different stages",
+  "Latest trends how the market booming economies are impacted",
+  "Managing the business along with the booming technology",
+  "World of female fantasies and the criminalites surrounding it"
+]
+
+images = [
+
+]
+
 puts 'Creating 10 fake books...'
 10.times do
   book = Book.create!(
     title: Faker::Book.title,
     author: Faker::Book.author,
-    summary: Faker::Lorem.paragraph(sentence_count: 5),
+    summary: description.sample,
     publishing_year: rand(1990..2022),
     price: rand(10..30),
     user: user

@@ -46,10 +46,17 @@ puts 'Creating 10 fake books...'
   )
 end
 
+review_description = [
+  "Great read",
+  "Beautifuly described, good book",
+  "Must read",
+  "Nice story-line",
+  "Awesome"
+]
 Book.all.each do |book|
   rand(4).times do
     Review.create!(
-      comment: Faker::Lorem.paragraph(sentence_count: 2),
+      comment: review_description.sample,
       rating: rand(5),
       book: book,
       user: User.all.sample

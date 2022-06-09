@@ -9,19 +9,20 @@
           <%= image_tag "happy.jpg", alt: "Le Wagon" %>
         <% end %>
         <div class="card-body">
-          <h5 class="card-title"><%= @book.title %></h5>
-          <p class="card-text"><%= @book.summary %></p>
-          <p class="card-text"><%= @book.author %></p>
-          <p class="card-text"><%= @book.publishing_year %></p>
-          <p class="card-text"><%= @book.price %></p>
-          <a href="#"><%= link_to 'Edit', edit_book_path(@book) %><i class="fas fa-pencil-alt"></i></a>
-          <a href="#"><%= link_to 'Delete', book_path(@book), method: :delete %><i class="far fa-trash-alt"></i></a>
+          <h5 class="card-title"><strong>Title: </strong> <%= @book.title %></h5>
+          <p class="card-text"><strong>Summary: </strong> <%= @book.summary %></p>
+          <p class="card-text"><strong>Author: </strong> <%= @book.author %></p>
+          <p class="card-text"><strong>Publishing year: </strong> <%=  @book.publishing_year %></p>
+          <p class="card-text"><strong>Price: </strong> <%= @book.price%></p>
+          <a href="#" ><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-primary"%></a>
+          <a href="#" ><%= link_to 'Delete', book_path(@book), class: "btn btn-sm btn-primary", method: :delete %></a>
         </div>
       </div>
     </div>
     <div class="col bg" >
       <div class="card-product-infos my-5" >
         <h2>Reviews</h2>
+
         <% @book.reviews.each do |review| %>
 
         <div class="notification">
@@ -41,8 +42,9 @@
         <%# <%= button_to "Add review", reviews_show_path(@book), method: :create  %>
         <%# <%= link_to 'Add review', review_book_path(@book) %>
         <% end %>
+        <%= link_to 'Add a Review', book_review_path(@book), class: "btn btn-sm btn-primary" %>
       </div>
     </div>
   </div>
-  <%= link_to 'Add review', book_review_path(@book) %>
+
 </div>

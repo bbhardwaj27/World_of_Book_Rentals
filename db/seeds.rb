@@ -41,7 +41,7 @@ puts 'Creating 10 fake books...'
 happy = Book.create!(
   title: "Happy",
   author: "Alex Lemon",
-  summary: description.sample,
+  summary: description[0],
   image: images[0],
   publishing_year: rand(1990..2022),
   price: rand(10..30),
@@ -51,7 +51,7 @@ happy = Book.create!(
 How_innovation_works = Book.create!(
   title: "How innovation works",
   author: "Matt Ridley",
-  summary: description.sample,
+  summary: description[2],
   image: images[2],
   publishing_year: rand(1990..2022),
   price: rand(10..30),
@@ -61,7 +61,7 @@ How_innovation_works = Book.create!(
 How_to_stop_worrying_start_living = Book.create!(
   title: "How to stop worrying start living",
   author: "Dale Carnigie",
-  summary: description.sample,
+  summary: description[6],
   image: images[6],
   publishing_year: rand(1990..2022),
   price: rand(10..30),
@@ -71,7 +71,7 @@ How_to_stop_worrying_start_living = Book.create!(
  Identity_theft = Book.create!(
   title: "Identity theft",
   author: "Melisa Kruger",
-  summary: description.sample,
+  summary: description[4],
   image: images[4],
   publishing_year: rand(1990..2022),
   price: rand(10..30),
@@ -81,7 +81,7 @@ How_to_stop_worrying_start_living = Book.create!(
 Kinfolk = Book.create!(
   title: "Kinfolk",
   author: "Williams",
-  summary: description.sample,
+  summary: description[3],
   image: images[3],
   publishing_year: rand(1990..2022),
   price: rand(10..30),
@@ -91,7 +91,7 @@ Kinfolk = Book.create!(
  Milk_and_Honey = Book.create!(
   title: "Milk and Honey",
   author: "Raupi Kaur",
-  summary: description.sample,
+  summary: description[5],
   image: images[5],
   publishing_year: rand(1990..2022),
   price: rand(10..30),
@@ -101,7 +101,7 @@ Kinfolk = Book.create!(
  Thinking_fast_and_slow = Book.create!(
   title: "Thinking fast and slow",
   author: "Daniel Kahneman",
-  summary: description.sample,
+  summary: description[7],
   image: images[7],
   publishing_year: rand(1990..2022),
   price: rand(10..30),
@@ -111,7 +111,7 @@ Kinfolk = Book.create!(
  Book_full_of_hope = Book.create!(
   title: "Book full of hope",
   author: "Xyz",
-  summary: description.sample,
+  summary: description[1],
   image: images[1],
   publishing_year: rand(1990..2022),
   price: rand(10..30),

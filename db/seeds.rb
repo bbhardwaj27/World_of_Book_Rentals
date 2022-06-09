@@ -15,11 +15,14 @@ user = User.new(username: "Bhawana", email: "x@gmail", password: "123456")
 user.save!
 
 description = [
-  "Entails the facinating world of science fiction",
+  "Entails the facinating life of normal people",
   "Very emotional life journey which shows the struggle at different stages",
-  "Latest trends how the market booming economies are impacted",
   "Managing the business along with the booming technology",
-  "World of female fantasies and the criminalites surrounding it"
+  "Cultural look out in the life, design, style",
+  "World of female fantasies and the criminalites surrounding it",
+  "Story revovles around he says and she says",
+  "Based on the emotional entanglements of mind and life",
+  "Latest trends how the investments and the markets are impacted as per the booming or the slow growth-rate economies "
 ]
 
 images = [
@@ -34,17 +37,86 @@ images = [
 ]
 
 puts 'Creating 10 fake books...'
-10.times do
-  book = Book.create!(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
-    summary: description.sample,
-    image: images.sample,
-    publishing_year: rand(1990..2022),
-    price: rand(10..30),
-    user: user
-  )
-end
+
+happy = Book.create!(
+  title: "Happy",
+  author: "Alex Lemon",
+  summary: description.sample,
+  image: images[0],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
+
+How_innovation_works = Book.create!(
+  title: "How innovation works",
+  author: "Matt Ridley",
+  summary: description.sample,
+  image: images[2],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
+
+How_to_stop_worrying_start_living = Book.create!(
+  title: "How to stop worrying start living",
+  author: "Dale Carnigie",
+  summary: description.sample,
+  image: images[6],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
+
+ Identity_theft = Book.create!(
+  title: "Identity theft",
+  author: "Melisa Kruger",
+  summary: description.sample,
+  image: images[4],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
+
+Kinfolk = Book.create!(
+  title: "Kinfolk",
+  author: "Williams",
+  summary: description.sample,
+  image: images[3],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
+
+ Milk_and_Honey = Book.create!(
+  title: "Milk and Honey",
+  author: "Raupi Kaur",
+  summary: description.sample,
+  image: images[5],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
+
+ Thinking_fast_and_slow = Book.create!(
+  title: "Thinking fast and slow",
+  author: "Daniel Kahneman",
+  summary: description.sample,
+  image: images[7],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
+
+ Book_full_of_hope = Book.create!(
+  title: "Book full of hope",
+  author: "Xyz",
+  summary: description.sample,
+  image: images[1],
+  publishing_year: rand(1990..2022),
+  price: rand(10..30),
+  user: user
+)
 
 review_description = [
   "Great read",

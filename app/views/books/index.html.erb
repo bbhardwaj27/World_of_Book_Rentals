@@ -3,7 +3,11 @@
 
   <% @books.each do |book| %>
     <div class="card-product book-card my-3">
-      <%= image_tag book.image, alt: "Le Wagon", width: 200 %>
+      <% if book.image.present? %>
+          <%= image_tag book.image, alt: "Le Wagon", width: 200 %>
+        <% else %>
+          <%= image_tag "happy.jpg", alt: "Le Wagon", width: 200 %>
+        <% end %>
       <div class="card-product-infos">
         <h2><%= book.title %></h2> by <%= book.author %>
         <p><%= book.summary%></p>

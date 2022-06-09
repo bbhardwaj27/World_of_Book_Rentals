@@ -1,7 +1,11 @@
 <h1>Reviews</h1>
 <div class="card-product-infos>
 <div class="card style="width: 50rem;">
- <%= image_tag @book.image, alt: "Le Wagon" %>
+  <% if @book.image.present? %>
+    <%= image_tag @book.image, alt: "Le Wagon" %>
+  <% else %>
+    <%= image_tag "happy.jpg", alt: "Le Wagon" %>
+  <% end %>
 </div>
 
 <div class="col">

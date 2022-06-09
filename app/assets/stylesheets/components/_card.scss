@@ -5,7 +5,7 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 140px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -14,27 +14,24 @@
 
 .card-product img {
   height: 100%;
-  width: 90px;
+  width: 150px;
   object-fit: cover;
 }
 
 .card-product h2 {
-  background: cornsilk;
   font: sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bolder;
   margin: 0;
 }
 
 .card-product p {
-  background: cornsilk;
-  font-size: 12px;
+  font-size: 14px;
   font: sans-serif;
   line-height: 1.4;
   opacity: 0.7;
-  margin-bottom: 8px;
-  margin-top: 8px;
-  padding: 6px 12px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 
 .card-product .card-product-infos {

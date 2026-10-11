@@ -74,6 +74,7 @@ GEM
       execjs (< 2.8.0)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.18)
+    bigdecimal (4.1.3)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
@@ -145,7 +146,9 @@ GEM
     minitest (5.15.0)
     msgpack (1.5.2)
     netrc (0.11.0)
-    nio4r (2.5.8)
+    nio4r (2.7.5)
+    nokogiri (1.13.6-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
@@ -270,11 +273,13 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  arm64-darwin-27
   x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
+  bigdecimal
   bootsnap (>= 1.4.4)
   bullet
   byebug

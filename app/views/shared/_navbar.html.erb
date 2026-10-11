@@ -27,8 +27,14 @@
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
-          <!--li class="nav-item"-->
-          <!--/li-->
+          <li class="nav-item d-flex align-items-center ms-sm-3" data-controller="theme">
+            <div class="form-check form-switch theme-switch d-flex align-items-center mb-0 ps-0">
+              <%= icon('fas', 'sun') %>
+              <input class="form-check-input" type="checkbox" role="switch" id="theme-switch"
+                     aria-label="Dark mode" data-theme-target="switch" data-action="change->theme#toggle">
+              <%= icon('fas', 'moon') %>
+            </div>
+          </li>
       </ul>
     </div>
   </div>

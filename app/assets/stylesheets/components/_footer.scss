@@ -1,18 +1,18 @@
 .footer {
-  background: #f4f4f4;
+  background: var(--theme-navbar);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--theme-muted);
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: var(--theme-text);
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;

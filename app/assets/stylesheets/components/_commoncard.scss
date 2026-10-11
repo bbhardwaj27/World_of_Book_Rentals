@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  background: white;
+  background: var(--theme-surface);
   padding: 8px 16px;
-  border: 1px solid rgb(235, 235, 235);
+  border: 1px solid var(--theme-border);
 }
 
 .notification .notification-content {
@@ -18,7 +18,7 @@
 }
 
 .notification small {
-  color: #999999;
+  color: var(--theme-muted);
   font-weight: bold;
 }
 .notification .notification-actions {
@@ -32,11 +32,11 @@
 }
 
 .notification .notification-actions a {
-  color: #999999;
+  color: var(--theme-muted);
   margin-left: 16px;
   font-size: 14px;
 }
 
 .notification .notification-actions a:hover {
-  color: #555555;
+  color: var(--theme-text);
 }

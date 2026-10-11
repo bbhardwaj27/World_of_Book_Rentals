@@ -1,0 +1,96 @@
+// Light/dark theme tokens. The theme is set as data-theme on <html>
+// (see layouts/application.html.erb and controllers/theme_controller.js).
+// Light values match the original Le Wagon theme; dark values are checked for WCAG AA contrast.
+
+:root {
+  --theme-surface:  #FFFFFF;
+  --theme-navbar:   #FFFFFF;
+  --theme-border:   rgb(235, 235, 235);
+  --theme-text:     #{$gray};
+  --theme-muted:    #999999;
+  --theme-link:     #{$primary};
+  --theme-nav-link: rgba(0, 0, 0, 0.55);
+  --theme-input-bg: #FFFFFF;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bs-body-bg:      #16171A;
+  --bs-body-bg-rgb:  22, 23, 26;
+  --bs-body-color:   #F4F4F4;
+  --bs-body-color-rgb: 244, 244, 244;
+
+  --theme-surface:  #212329;
+  --theme-navbar:   #1B1D21;
+  --theme-border:   #33363D;
+  --theme-text:     #F4F4F4;
+  --theme-muted:    #A8ACB3;
+  --theme-link:     #6EA8FE;
+  --theme-nav-link: #C9CCD1;
+  --theme-input-bg: #16171A;
+}
+
+body {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+  color: var(--theme-link);
+}
+
+// Bootstrap 5.1 compiles these colors statically, so they need explicit dark overrides.
+html[data-theme="dark"] {
+  .card,
+  .dropdown-menu {
+    background-color: var(--theme-surface);
+    border-color: var(--theme-border);
+    color: var(--theme-text);
+  }
+
+  .form-control,
+  .form-select {
+    background-color: var(--theme-input-bg);
+    border-color: var(--theme-border);
+    color: var(--theme-text);
+
+    &::placeholder {
+      color: var(--theme-muted);
+    }
+  }
+
+  .text-muted {
+    color: var(--theme-muted) !important;
+  }
+
+  .navbar-light {
+    .navbar-brand,
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: var(--theme-text);
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--theme-nav-link);
+    }
+
+    .navbar-toggler {
+      border-color: var(--theme-border);
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  }
+}
+
+.theme-switch {
+  color: var(--theme-nav-link);
+  gap: 0.5rem;
+
+  .form-check-input {
+    float: none;
+    margin: 0;
+    cursor: pointer;
+  }
+}

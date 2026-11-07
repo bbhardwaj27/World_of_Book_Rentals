@@ -44,7 +44,6 @@ Without the warning flag, `socket` (and so `openssl`/`net/http`) silently fails 
 
 ## Known quirks
 
-- `ReviewsController#create` assigns a random user (`User.all.sample`), not `current_user`, and it logs a lot of debug output.
 - `BooksController#list` is broken (`Book.find(all)`) and has no route.
 - `BooksController#create` calls `save!`, so a validation failure raises an error instead of rendering `new`.
-- Most tests are empty generator stubs, some for controllers that don't exist (`BookRentals`, `Lists`). `reviews_controller_test.rb` points to routes that don't exist (`reviews_create_url`), so it fails.
+- Most tests are empty generator stubs, some for controllers that don't exist (`BookRentals`, `Lists`). `test/test_helper.rb` provides `create_user` / `create_book` (there are no fixtures) and includes Devise's `sign_in` in integration tests.

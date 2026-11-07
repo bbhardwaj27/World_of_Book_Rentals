@@ -10,32 +10,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new
     @book = Book.find(params[:book_id])
-    @review.book_id = params[:book_id]
-    @review.rating = params[:review][:rating]
-    @review.comment = params[:review][:comment]
-    @review.user_id =
-
-    @review = Review.create!(
-      comment: params[:review][:comment],
-      rating: params[:review][:rating],
-      book: @book,
-      user: User.all.sample
-    )
-
-    logger.info "Book Id : " + params[:book_id]
-    logger.info " Comment : " + params[:review][:comment]
-    logger.info " Rating : " + + params[:review][:rating]
-    # logger.info "Review is : " + @review.comment + " Rating is : " + @review.rating
+    @review = @book.reviews.new(review_params)
+    @review.user = current_user
     if @review.save
-      logger.info "Save worked Yippe !"
       redirect_to book_path(@book)
     else
-      logger.info "Save failed !"
-      # render 'books/show'
-      # render 'review/show'
-      redirect_to book_path(@book)
+      render :show, status: :unprocessable_entity
     end
   end
 
@@ -48,6 +29,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    # params.require(:comment).permit(:rating)
+    params.require(:review).permit(:comment, :rating)
   end
 end

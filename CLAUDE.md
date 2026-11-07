@@ -31,7 +31,7 @@ RUBY_CONFIGURE_OPTS="--with-out-ext=bigdecimal --with-libyaml-dir=$(brew --prefi
 rbenv install 3.0.3
 ```
 
-Without the warning flag, `socket` (and so `openssl`/`net/http`) silently fails to build. The bundled `bigdecimal` doesn't compile at all, so the Gemfile lists the `bigdecimal` gem explicitly. `nio4r` was bumped to 2.7.x for the same compiler reason. If `bin/rails` hangs, Spring is to blame: prefix commands with `DISABLE_SPRING=1`. Webpacker 5 (Webpack 4) fails on Node 17+ with `error:0308010C:digital envelope routines::unsupported`; prefix `bin/webpack` / `bin/webpack-dev-server` with `NODE_OPTIONS=--openssl-legacy-provider`.
+Without the warning flag, `socket` (and so `openssl`/`net/http`) silently fails to build. The bundled `bigdecimal` doesn't compile at all, so the Gemfile lists the `bigdecimal` gem explicitly. `nio4r` was bumped to 2.7.x for the same compiler reason. If `bin/rails` hangs, Spring is to blame: prefix commands with `DISABLE_SPRING=1`. Webpacker 5 (Webpack 4) fails on Node 17+ with `error:0308010C:digital envelope routines::unsupported`; prefix `bin/webpack` / `bin/webpack-dev-server` with `NODE_OPTIONS=--openssl-legacy-provider`. The same prefix is needed on `bin/rails server` when packs are stale, since Webpacker compiles them on demand. Ruby 3.0.3's `Socket.tcp(connect_timeout:)` doesn't raise on a refused connection here, so `config/initializers/webpacker_dev_server.rb` overrides Webpacker's dev server check; without it, pages load no JS.
 
 ## Architecture
 
